@@ -2,20 +2,19 @@ const textArea = document.querySelector('.text-area');
 const mensaje = document.querySelector('.mensaje');
 const copiar = document.querySelector('.copiar');
 
-function encriptar(textAreaN){
+function encriptar(textArea){
     let matrizAceptada = [["e","enter"],["i","imes"],["a","ai"],["o","ober"],["u","ufat"]];
-    for(i=0;i<matrizAceptada.length;i++){
-        if(textAreaN.includes(matrizAceptada[i][0])){
-            textAreaN = textAreaN.replaceAll(matrizAceptada[i][0],matrizAceptada[i][1]);
+    for(let i=0;i<matrizAceptada.length;i++){
+        if(textArea.includes(matrizAceptada[i][0])){
+            textArea = textA.replaceAll(matrizAceptada[i][0],matrizAceptada[i][1]);
         }
     }
-    return textAreaN;
+    return textArea;
 }
-
 
 function desencriptar(mensajeCod){
     let matrizAceptada = [["e","enter"],["i","imes"],["a","ai"],["o","ober"],["u","ufat"]];
-    for(i=0;i<matrizAceptada.length;i++){
+    for(let i=0;i<matrizAceptada.length;i++){
         if(mensajeCod.includes(matrizAceptada[i][1])){
             mensajeCod = mensajeCod.replaceAll(matrizAceptada[i][1],matrizAceptada[i][0]);
         }
@@ -24,13 +23,13 @@ function desencriptar(mensajeCod){
 }
 
 function btnEncriptar(){
-    mensaje.value = encriptar(textArea);
+    mensaje.value = encriptar(textArea.value);
 }
 
-function btnDesencriptar(){
+/* function btnDesencriptar(){
 
 }
 
 function copiar(){
     
-}
+} */
