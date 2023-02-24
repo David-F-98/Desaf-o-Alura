@@ -4,35 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="style.css" as="style" />
     <link rel="stylesheet" href="style.css">
     <script src="index.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Encriptador</title>
 </head>
 <body>
     <header>
         <img src="imagenes/Logo.png" alt="logo de alura" class="logo">
+        <h1>Encriptador de texto</h1>
     </header>
-    <main>
-        <section>
-            <h1>Encriptador de texto</h1>
-            <textarea class="text-area" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea>
+    <main class="contenedor-principal">
+        <div class="contenedor1">
+            <textarea class="text-area" placeholder="Ingrese el texto aquí" autofocus></textarea>
             <div>
-                <h6 class="informacion">Solo letras minúsculas y sin acentos</h6>
+                <h6 class="informacion"> <img class="aviso" src="imagenes/LogoAviso.png" alt="aviso de letras"> Solo letras minúsculas y sin acentos</h6>
             </div>
             <div class="botones">
-                <button  onclick="encriptar()" class="btn-encriptar">Encriptar</button>
-                <button onclick="desencriptar()" class="btn-desencriptar">Desencriptar</button>
+                <button class="btn-encriptar">Encriptar</button>
+                <button class="btn-desencriptar">Desencriptar</button>
             </div>
-        </section>
-        <section>
-            <textarea class="mensaje" cols="20" rows="10"></textarea>
-            <div>
-                <button onclick="copiar()" class="btn-copiar">Copiar</button>
+        </div>
+        <div class="contenedor2">
+            <div class="sub-contenedor2">
+                <img
+                class="muneca"
+                src="imagenes/Muñeco.png"
+                />          
+                <p class="muneca-texto1">Ningún mensaje fue encontrado</p>
+                <p class="muneca-texto2">
+                Ingresa el texto que desees encriptar o desencriptar.
+                </p>
             </div>
-        </section>
+        </div>
     </main>
+    <footer>
+        <p>
+            &copy; <span class="nombre">David Fernando Rodríguez Nieto</span> Todos
+            los derechos reservados.
+          </p>
+    </footer>
 </body>
 </html>
