@@ -21,14 +21,14 @@ header {
     align-items: center;
     margin-bottom: 20px;
 }
-.text-area {
+.text-area ,.text-area2 {
     resize: none;
     font-size: 40px;
     color: #0A3871;
     background-color: #F3F5FC;
     border: none;
     outline: none;
-    width: 50%;
+    width: 100%;
     height: 600px;
 }
 .aviso{
@@ -51,7 +51,7 @@ button:active {
     text-align: center;
 }
 
-.btn-encriptar{
+.btn-encriptar ,.btn-copiar{
     background-color: #0A3871;
     font-size: 20px;
     color: #FFFFFF;
@@ -79,6 +79,7 @@ button:active {
     align-items: center;
     justify-content: space-around;
     text-align: center;
+    flex-direction: column;
 }
 .contenedor-principal{
     display: flex;
@@ -90,9 +91,27 @@ button:active {
     transition: 0.5s all;
     cursor: pointer;
 }
+.btn-copiar{
+    cursor: pointer;
+}
 .btn-encriptar:active ,.btn-desencriptar:active{
     border-color: #000;
     transition: none;
+}
+.CopiarBoton{
+    flex-direction: column;
+}
+.contenedor3{
+    display: none;
+    width: 40%;
+    background-color: #FFFFFF;
+    box-shadow: 0rem 2.4rem 3.2rem -.8rem rgba(0, 0, 0, 0.08);
+    border-radius: 2rem;
+    padding: 2rem;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    flex-direction: column;
 }
 footer{
     display: flex;
@@ -126,20 +145,3 @@ footer{
         width: 90%;
     }
 }
-
-/* @media screen and (min-width: 768px) {
-    .text-area{
-        height: 500px;
-        font-size: 20px;
-    }
-
-}
-
-@media (min-width: 1200px) {
-
-
-}
-
-@media (min-height: 900px) {
-
-} */
