@@ -1,7 +1,6 @@
-const textArea = document.querySelector('.textArea');
-const mensaje = document.querySelector('.mensaje');
-
 function btnEncriptar(){
+    const textArea = document.querySelector('.textArea');
+    const mensaje = document.querySelector('.mensaje');
     const textoEncriptado = encriptar(textArea.value);
     mensaje.value = textoEncriptado;
     mensaje.style.display = "flex";
@@ -20,10 +19,20 @@ function encriptar(stringEncriptada){
 }
 
 function btnDesencriptar(){
+    const textArea = document.querySelector('.textArea');
+    const mensaje = document.querySelector('.mensaje');
+    const subComponent = document.querySelector('.sub-contenedor2'); 
     const textoDesencriptado = desencriptar(textArea.value);
     mensaje.value = textoDesencriptado;
     textArea.value = "";
-    mensaje.style.backgroundImage = none;
+    mensaje.style.backgroundImage = ""; 
+
+    for (let indiceHijosSubComponent2 = 0; indiceHijosSubComponent2 < subComponent.children.length; indiceHijosSubComponent2++) {  
+        let element = subComponent.children[indiceHijosSubComponent2]; 
+        if(element.className != "mensaje"){  
+            element.hidden = true;
+        }
+    }
 }
 
 function desencriptar(stringDesencriptada){
@@ -38,17 +47,15 @@ function desencriptar(stringDesencriptada){
 }
 
 function copiar() {
-    navigator.clipboard.writeText(textArea2.textContent)
-        .then(() => swal({
-            text: "Texto copiado!",
-            icon: "success",
-            buttons: false,
-            timer: 1000,
-        }))
-        .catch(() => swal({
-            text: "Error al copiar texto!",
-            icon: "error",
-            buttons: false,
-            timer: 1000,
-        }));
+    const mensaje = document.querySelector('.mensaje');
+
+    navigator.clipboard.writeText(mensaje.value)
+        .then(() => {
+            swal({  
+                text: "Texto copiado!",
+                icon: "success",
+                buttons: false,
+                timer: 1000,
+            })
+        })
 }
