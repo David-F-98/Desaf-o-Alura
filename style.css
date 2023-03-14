@@ -133,6 +133,18 @@ footer{
     margin-top: 50px;
 }
 
+.footer__social {
+    list-style: none;
+    display: flex;
+    padding-left: 10px;
+}
+.footer__midia{
+    padding: 15px;
+}
+.derechos{
+    padding-top: 15px;
+}
+
 /* Responsive */
 
 @media screen and (max-width: 768px) {
